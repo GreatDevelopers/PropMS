@@ -1,0 +1,256 @@
+bench install-app propms                                                                                                                                                                                 
+                                                                                                                                                                                                                   
+Installing propms...                                                                                                                                                                                               
+An error occurred while installing propms: Issue: Options must be a valid DocType for field Property Name in row 5                                                                                                 
+Traceback with variables (most recent call last):                                                                                                                                                                    File "apps/frappe/frappe/commands/site.py", line 481, in install_app                                                                                                                                             
+    _install_app(app, verbose=context.verbose, force=force)                                                                                                                                                        
+      context = {'sites': ['lc.ukiericoncretecongress.com'], 'force': False, 'verbose': False, 'profile': False}                                                                                                   
+      apps = ('propms',)                                                                                                                                                                                           
+      force = False                                                                                                                                                                                                
+      _install_app = <function install_app at 0x7ffa2388a8e0>                                                                                                                                                      
+      filelock = <function filelock at 0x7ffa23888040>                                                                                                                                                                   exit_code = 0                                                                                                                                                                                                
+      site = 'lc.ukiericoncretecongress.com'                                                                                                                                                                       
+      app = 'propms'                                                                                                                                                                                               
+      err = WrongOptionsDoctypeLinkError('Issue: Options must be a valid DocType for field Property Name in row 5')                                                                                                
+  File "apps/frappe/frappe/installer.py", line 326, in install_app                                                                                                                                                 
+    frappe.get_attr(after_install)()                                                                                                                                                                               
+      name = 'propms'                                                                                                                                                                                              
+      verbose = False                                                                                                                                                                                              
+      set_as_patched = True                                                                                                                                                                                        
+      force = False                                                                                                                                                                                                
+      sync_jobs = <function sync_jobs at 0x7ffa22d28c20>                                                                                                                                                           
+      sync_for = <function sync_for at 0x7ffa22d29bc0>                                                                                                                                                             
+      sync_customizations = <function sync_customizations at 0x7ffa247554e0>                                                                                                                                       
+      sync_fixtures = <function sync_fixtures at 0x7ffa22d29ee0>                                                                                                                                                   
+      app_hooks = {'after_install': ['propms.utils.create_custom_fields.execute', 'propms.utils.create_property_setter.execute'], 'after_migrate': ['propms.utils.create_custom_fields.execute', 'propms.utils.crea
+te_property_setter.execute'], 'app_color': ['grey'], 'app_description': ['Property Management Solution'], 'app_email': ['info@aakvatech.com'], 'app_icon': ['octicon octicon-home'], 'app_license': ['MIT'], 'app_n
+ame': ['propms'], 'app_publisher': ['Aakvatech'], 'app_title': ['Property Management Solution'], 'app_version': ['1.7.0'], 'doc_events': {'Issue': {'validate': ['propms.issue_hook.validate']}, 'Material Request'
+: {'validate': ['propms.auto_custom.makeSalesInvoice'], 'on_update': ['propms.auto_custom.makeSalesInvoice'], 'on_change': ['propms.auto_custom.makeSalesInvoice']}, 'Sales Order': {'validate': ['propms.auto_cust
+om.validateSalesInvoiceItemDuplication']}, 'Key Set Detail': {'on_change': ['propms.auto_custom.changeStatusKeyset']}, 'Meter Reading': {'on_submit': ['propms.auto_custom.mak...                                  
+      installed_apps = ['frappe', 'erpnext', 'hrms']                                                                                                                                                               
+      after_install = 'propms.utils.create_custom_fields.execute'                                                                                                                                                  
+  File "apps/propms/propms/utils/create_custom_fields.py", line 62, in execute                                                                                                                                     
+    create_fields_from_json(data)                                                                                                                                                                                  
+      files = ['01_init.json']                                                                                                                                                                                     
+      file = '01_init.json'                                                                                                                                                                                        
+      data = [{'allow_in_quick_entry': 0, 'allow_on_submit': 0, 'bold': 0, 'collapsible': 0, 'collapsible_depends_on': None, 'columns': 0, 'default': None, 'depends_on': None, 'description': None, 'docstatus': 0
+, 'doctype': 'Custom Field', 'dt': 'Issue', 'fetch_from': None, 'fetch_if_empty': 0, 'fieldname': 'column_break_4', 'fieldtype': 'Column Break', 'hidden': 0, 'hide_border': 0, 'hide_days': 0, 'hide_seconds': 0, 
+'ignore_user_permissions': 0, 'ignore_xss_filter': 0, 'in_global_search': 0, 'in_list_view': 0, 'in_preview': 0, 'in_standard_filter': 0, 'insert_after': 'subject', 'label': None, 'length': 0, 'mandatory_depends
+_on': None, 'modified': '2020-04-17 18:10:34.082349', 'name': 'Issue-column_break_4', 'no_copy': 0, 'non_negative': 0, 'options': None, 'parent': None, 'parentfield': None, 'parenttype': None, 'permlevel': 0, 'p
+recision': '', 'print_hide': 0, 'print_hide_if_no_value': 0, 'print_width': None, 'read_only': 0, 'read_only_depends_on': None, 'report_hide': 0, 'reqd': 0, 'search_inde...                                       
+  File "apps/propms/propms/utils/create_custom_fields.py", line 47, in create_fields_from_json                                                                                                                     
+    create_custom_fields(doctype_custom_fields_dict, update=False)                                       
+      custom_fields_obj = [{'allow_in_quick_entry': 0, 'allow_on_submit': 0, 'bold': 0, 'collapsible': 0, 'collapsible_depends_on': None, 'columns': 0, 'default': None, 'depends_on': None, 'description': None, '
+docstatus': 0, 'doctype': 'Custom Field', 'dt': 'Issue', 'fetch_from': None, 'fetch_if_empty': 0, 'fieldname': 'column_break_4', 'fieldtype': 'Column Break', 'hidden': 0, 'hide_border': 0, 'hide_days': 0, 'hide_
+seconds': 0, 'ignore_user_permissions': 0, 'ignore_xss_filter': 0, 'in_global_search': 0, 'in_list_view': 0, 'in_preview': 0, 'in_standard_filter': 0, 'insert_after': 'subject', 'label': None, 'length': 0, 'mand
+atory_depends_on': None, 'modified': '2020-04-17 18:10:34.082349', 'name': 'Issue-column_break_4', 'no_copy': 0, 'non_negative': 0, 'options': None, 'parent': None, 'parentfield': None, 'parenttype': None, 'perm
+level': 0, 'precision': '', 'print_hide': 0, 'print_hide_if_no_value': 0, 'print_width': None, 'read_only': 0, 'read_only_depends_on': None, 'report_hide': 0, 'reqd': 0, 'search_inde...
+      disallowed_fields = ['name', 'owner', 'creation', 'modified', 'modified_by', 'docstatus', 'idx', 'is_system_generated', '__last_sync_on']  
+      doctype_custom_fields_dict = {'Issue': [{'depends_on': None, 'allow_in_quick_entry': 0, 'report_hide': 0, 'link_filters': None, 'bold': 0, 'insert_after': 'subject', 'module': None, 'length': 0, 'collapsib
+le_depends_on': None, 'ignore_user_permissions': 0, 'hide_days': 0, 'collapsible': 0, 'sort_options': None, 'translatable': 0, 'label': None, 'default': None, 'description': None, 'hide_border': 0, 'non_negative
+': 0, 'fieldtype': 'Column Break', 'hide_seconds': 0, 'dt': 'Issue', 'show_dashboard': None, 'in_standard_filter': 0, 'permlevel': 0, 'read_only': 0, 'options': None, 'read_only_depends_on': None, 'unique': 0, '
+in_preview': 0, 'width': None, 'precision': '', 'allow_on_submit': 0, 'print_width': None, 'in_global_search': 0, 'no_copy': 0, 'fieldname': 'column_break_4', 'columns': 0, 'fetch_from': None, 'fetch_if_empty': 
+0, 'print_hide_if_no_value': 0, 'ignore_xss_filter': 0, 'hidden': 0, 'reqd': 0, 'search_index': 0, 'placeholder': None, 'in_list_view': 0, 'print_hide': 0, 'is_virtual': None, 'mandatory_depe...
+      custom_field = {'allow_in_quick_entry': 0, 'allow_on_submit': 0, 'bold': 0, 'collapsible': 0, 'collapsible_depends_on': None, 'columns': 0, 'default': None, 'depends_on': '', 'description': None, 'docstatu
+s': 0, 'doctype': 'Custom Field', 'dt': 'Sales Invoice', 'fetch_from': None, 'fetch_if_empty': 0, 'fieldname': 'job_card', 'fieldtype': 'Link', 'hidden': 0, 'hide_border': 0, 'hide_days': 0, 'hide_seconds': 0, '
+ignore_user_permissions': 0, 'ignore_xss_filter': 0, 'in_global_search': 0, 'in_list_view': 0, 'in_preview': 0, 'in_standard_filter': 0, 'insert_after': 'lease_item', 'label': 'Job Card', 'length': 0, 'mandatory
+_depends_on': None, 'modified': '2020-04-16 17:05:14.944120', 'name': 'Sales Invoice-job_card', 'no_copy': 0, 'non_negative': 0, 'options': 'Issue', 'parent': None, 'parentfield': None, 'parenttype': None, 'perm
+level': 0, 'precision': '', 'print_hide': 0, 'print_hide_if_no_value': 0, 'print_width': None, 'read_only': 0, 'read_only_depends_on': None, 'report_hide': 0, 'reqd': 0, 'search...
+      doctype = 'Sales Invoice'                     
+      all_fields = ['name', 'owner', 'creation', 'modified', 'modified_by', 'docstatus', 'idx', 'is_system_generated', 'dt', 'module', 'label', 'placeholder', 'fieldname', 'insert_after', 'length', 'link_filters
+', 'fieldtype', 'precision', 'hide_seconds', 'hide_days', 'options', 'sort_options', 'fetch_from', 'fetch_if_empty', 'collapsible', 'collapsible_depends_on', 'default', 'depends_on', 'mandatory_depends_on', 'rea
+d_only_depends_on', 'non_negative', 'reqd', 'unique', 'is_virtual', 'read_only', 'ignore_user_permissions', 'hidden', 'print_hide', 'print_hide_if_no_value', 'print_width', 'no_copy', 'allow_on_submit', 'in_list
+_view', 'in_standard_filter', 'in_global_search', 'in_preview', 'bold', 'report_hide', 'search_index', 'allow_in_quick_entry', 'ignore_xss_filter', 'translatable', 'hide_border', 'show_dashboard', 'description',
+ 'permlevel', 'width', 'columns']                   
+      field_list = {'depends_on', 'allow_in_quick_entry', 'report_hide', 'link_filters', 'bold', 'insert_after', 'module', 'length', 'collapsible_depends_on', 'ignore_user_permissions', 'hide_days', 'collapsible
+', 'sort_options', 'translatable', 'label', 'default', 'description', 'hide_border', 'non_negative', 'fieldtype', 'hide_seconds', 'dt', 'show_dashboard', 'in_standard_filter', 'permlevel', 'read_only', 'options'
+, 'read_only_depends_on', 'unique', 'in_preview', 'width', 'precision', 'allow_on_submit', 'print_width', 'in_global_search', 'no_copy', 'fieldname', 'columns', 'fetch_from', 'fetch_if_empty', 'print_hide_if_no_
+value', 'ignore_xss_filter', 'hidden', 'reqd', 'search_index', 'placeholder', 'in_list_view', 'print_hide', 'is_virtual', 'mandatory_depends_on'}
+      custom_field_dict = {'depends_on': '', 'allow_in_quick_entry': 0, 'report_hide': 0, 'link_filters': None, 'bold': 0, 'insert_after': 'lease_item', 'module': None, 'length': 0, 'collapsible_depends_on': Non
+e, 'ignore_user_permissions': 0, 'hide_days': 0, 'collapsible': 0, 'sort_options': None, 'translatable': 0, 'label': 'Job Card', 'default': None, 'description': None, 'hide_border': 0, 'non_negative': 0, 'fieldt
+ype': 'Link', 'hide_seconds': 0, 'dt': 'Sales Invoice', 'show_dashboard': None, 'in_standard_filter': 0, 'permlevel': 0, 'read_only': 0, 'options': 'Issue', 'read_only_depends_on': None, 'unique': 0, 'in_preview
+': 0, 'width': None, 'precision': '', 'allow_on_submit': 0, 'print_width': None, 'in_global_search': 0, 'no_copy': 0, 'fieldname': 'job_card', 'columns': 0, 'fetch_from': None, 'fetch_if_empty': 0, 'print_hide_i
+f_no_value': 0, 'ignore_xss_filter': 0, 'hidden': 0, 'reqd': 0, 'search_index': 0, 'placeholder': None, 'in_list_view': 0, 'print_hide': 0, 'is_virtual': None, 'mandatory_depends_on'...
+      field_name = 'mandatory_depends_on'                                                                
+  File "apps/frappe/frappe/custom/doctype/custom_field/custom_field.py", line 328, in create_custom_fields                                                                                                         
+    create_custom_field(doctype, df, ignore_validate=ignore_validate)                                    
+      custom_fields = {'Issue': [{'depends_on': None, 'allow_in_quick_entry': 0, 'report_hide': 0, 'link_filters': None, 'bold': 0, 'insert_after': 'subject', 'module': None, 'length': 0, 'collapsible_depends_on
+': None, 'ignore_user_permissions': 0, 'hide_days': 0, 'collapsible': 0, 'sort_options': None, 'translatable': 0, 'label': None, 'default': None, 'description': None, 'hide_border': 0, 'non_negative': 0, 'fieldt
+ype': 'Column Break', 'hide_seconds': 0, 'dt': 'Issue', 'show_dashboard': None, 'in_standard_filter': 0, 'permlevel': 0, 'read_only': 0, 'options': None, 'read_only_depends_on': None, 'unique': 0, 'in_preview': 
+0, 'width': None, 'precision': '', 'allow_on_submit': 0, 'print_width': None, 'in_global_search': 0, 'no_copy': 0, 'fieldname': 'column_break_4', 'columns': 0, 'fetch_from': None, 'fetch_if_empty': 0, 'print_hid
+e_if_no_value': 0, 'ignore_xss_filter': 0, 'hidden': 0, 'reqd': 0, 'search_index': 0, 'placeholder': None, 'in_list_view': 0, 'print_hide': 0, 'is_virtual': None, 'mandatory_depe...
+      ignore_validate = False                       
+      update = False                                
+      doctypes_to_update = {'Issue'}                
+      doctypes = ('Issue',)                         
+      fields = [{'depends_on': None, 'allow_in_quick_entry': 0, 'report_hide': 0, 'link_filters': None, 'bold': 0, 'insert_after': 'subject', 'module': None, 'length': 0, 'collapsible_depends_on': None, 'ignore_
+user_permissions': 0, 'hide_days': 0, 'collapsible': 0, 'sort_options': None, 'translatable': 0, 'label': None, 'default': None, 'description': None, 'hide_border': 0, 'non_negative': 0, 'fieldtype': 'Column Bre
+ak', 'hide_seconds': 0, 'dt': 'Issue', 'show_dashboard': None, 'in_standard_filter': 0, 'permlevel': 0, 'read_only': 0, 'options': None, 'read_only_depends_on': None, 'unique': 0, 'in_preview': 0, 'width': None,
+ 'precision': '', 'allow_on_submit': 0, 'print_width': None, 'in_global_search': 0, 'no_copy': 0, 'fieldname': 'column_break_4', 'columns': 0, 'fetch_from': None, 'fetch_if_empty': 0, 'print_hide_if_no_value': 0
+, 'ignore_xss_filter': 0, 'hidden': 0, 'reqd': 0, 'search_index': 0, 'placeholder': None, 'in_list_view': 0, 'print_hide': 0, 'is_virtual': None, 'mandatory_depends_on': N...
+      doctype = 'Issue'                             
+      df = {'depends_on': None, 'allow_in_quick_entry': 0, 'report_hide': 0, 'link_filters': None, 'bold': 0, 'insert_after': 'column_break_4', 'module': None, 'length': 0, 'collapsible_depends_on': None, 'ignor
+e_user_permissions': 0, 'hide_days': 0, 'collapsible': 0, 'sort_options': None, 'translatable': 0, 'label': 'Property Name', 'default': None, 'description': None, 'hide_border': 0, 'non_negative': 0, 'fieldtype'
+: 'Link', 'hide_seconds': 0, 'dt': 'Issue', 'show_dashboard': None, 'in_standard_filter': 1, 'permlevel': 0, 'read_only': 0, 'options': 'Property', 'read_only_depends_on': None, 'unique': 0, 'in_preview': 0, 'wi
+dth': None, 'precision': '', 'allow_on_submit': 0, 'print_width': None, 'in_global_search': 0, 'no_copy': 0, 'fieldname': 'property_name', 'columns': 0, 'fetch_from': None, 'fetch_if_empty': 0, 'print_hide_if_no
+_value': 0, 'ignore_xss_filter': 0, 'hidden': 0, 'reqd': 1, 'search_index': 0, 'placeholder': None, 'in_list_view': 0, 'print_hide': 0, 'is_virtual': None, 'mandatory_...
+      field = None                                                                                                                                                                                       [143/1543]
+  File "apps/frappe/frappe/custom/doctype/custom_field/custom_field.py", line 294, in create_custom_field                                                                                                          
+    custom_field.insert()                           
+      doctype = 'Issue'                             
+      df = {'depends_on': None, 'allow_in_quick_entry': 0, 'report_hide': 0, 'link_filters': None, 'bold': 0, 'insert_after': 'column_break_4', 'module': None, 'length': 0, 'collapsible_depends_on': None, 'ignor
+e_user_permissions': 0, 'hide_days': 0, 'collapsible': 0, 'sort_options': None, 'translatable': 0, 'label': 'Property Name', 'default': None, 'description': None, 'hide_border': 0, 'non_negative': 0, 'fieldtype'
+: 'Link', 'hide_seconds': 0, 'dt': 'Issue', 'show_dashboard': None, 'in_standard_filter': 1, 'permlevel': 0, 'read_only': 0, 'options': 'Property', 'read_only_depends_on': None, 'unique': 0, 'in_preview': 0, 'wi
+dth': None, 'precision': '', 'allow_on_submit': 0, 'print_width': None, 'in_global_search': 0, 'no_copy': 0, 'fieldname': 'property_name', 'columns': 0, 'fetch_from': None, 'fetch_if_empty': 0, 'print_hide_if_no
+_value': 0, 'ignore_xss_filter': 0, 'hidden': 0, 'reqd': 1, 'search_index': 0, 'placeholder': None, 'in_list_view': 0, 'print_hide': 0, 'is_virtual': None, 'mandatory_...
+      ignore_validate = False                       
+      is_system_generated = True                    
+      custom_field = <CustomField: Issue-property_name>                                                  
+  File "apps/frappe/frappe/model/document.py", line 315, in insert                                       
+    self.run_post_save_methods()                    
+      self = <CustomField: Issue-property_name>                                                          
+      ignore_permissions = None                     
+      ignore_links = None                           
+      ignore_if_duplicate = False                   
+      ignore_mandatory = None                       
+      set_name = None                               
+      set_child_names = True                        
+  File "apps/frappe/frappe/model/document.py", line 1128, in run_post_save_methods                                                                                                                                 
+    self.run_method("on_update")                    
+      self = <CustomField: Issue-property_name>                                                          
+  File "apps/frappe/frappe/model/document.py", line 962, in run_method                                   
+    out = Document.hook(fn)(self, *args, **kwargs)                                                       
+      self = <CustomField: Issue-property_name>                                                          
+      method = 'on_update'                          
+      args = ()                                     
+      kwargs = {}                                   
+      fn = <function Document.run_method.<locals>.fn at 0x7ffa2118bce0>                                  
+  File "apps/frappe/frappe/model/document.py", line 1322, in composer                                    
+    return composed(self, method, *args, **kwargs)                                                       
+      self = <CustomField: Issue-property_name>                                                          
+      args = ()                                     
+      kwargs = {}                                   
+      hooks = [<function clear_doctype_notifications at 0x7ffa217f0a40>, <function process_workflow_actions at 0x7ffa218004a0>, <function attach_files_to_document at 0x7ffa24adf100>, <function apply at 0x7ffa218
+034c0>, <function update_due_date at 0x7ffa21803560>, <function apply_permissions_for_non_standard_user_type at 0x7ffa2181cd60>]                                                                                   
+      method = 'on_update'                          
+      doc_events = {'*': {'on_update': ['frappe.desk.notifications.clear_doctype_notifications', 'frappe.workflow.doctype.workflow_action.workflow_action.process_workflow_actions', 'frappe.core.doctype.file.util
+s.attach_files_to_document', 'frappe.automation.doctype.assignment_rule.assignment_rule.apply', 'frappe.automation.doctype.assignment_rule.assignment_rule.update_due_date', 'frappe.core.doctype.user_type.user_ty
+pe.apply_permissions_for_non_standard_user_type'], 'after_rename': ['frappe.desk.notifications.clear_doctype_notifications'], 'on_cancel': ['frappe.desk.notifications.clear_doctype_notifications', 'frappe.workfl
+ow.doctype.workflow_action.workflow_action.process_workflow_actions', 'frappe.automation.doctype.assignment_rule.assignment_rule.apply'], 'on_trash': ['frappe.desk.notifications.clear_doctype_notifications', 'fr
+appe.workflow.doctype.workflow_action.workflow_action.process_workflow_actions'], 'on_update_after_submit': ['frappe.workflow.doctype.workflow_action.workflow_action.process_w...
+      handler = 'frappe.core.doctype.user_type.user_type.apply_permissions_for_non_standard_user_type'                                                                                                             
+      composed = <function Document.hook.<locals>.compose.<locals>.runner at 0x7ffa2118bba0>                                                                                                                       
+      compose = <function Document.hook.<locals>.compose at 0x7ffa2118bc40>                              
+      f = <function Document.run_method.<locals>.fn at 0x7ffa2118bce0>                                   
+  File "apps/frappe/frappe/model/document.py", line 1304, in runner                                      
+    add_to_return_value(self, fn(self, *args, **kwargs))                                                 
+      self = <CustomField: Issue-property_name>                                                          
+      method = 'on_update'                                                                                                                                                                                        [92/1543]
+      args = ()                                     
+      kwargs = {}                                   
+      add_to_return_value = <function Document.hook.<locals>.add_to_return_value at 0x7ffa2118bf60>                                                                                                                
+      fn = <function Document.run_method.<locals>.fn at 0x7ffa2118bce0>                                  
+      hooks = (<function clear_doctype_notifications at 0x7ffa217f0a40>, <function process_workflow_actions at 0x7ffa218004a0>, <function attach_files_to_document at 0x7ffa24adf100>, <function apply at 0x7ffa218
+034c0>, <function update_due_date at 0x7ffa21803560>, <function apply_permissions_for_non_standard_user_type at 0x7ffa2181cd60>)                                                                                   
+  File "apps/frappe/frappe/model/document.py", line 959, in fn                                           
+    return method_object(*args, **kwargs)                                                                
+      self = <CustomField: Issue-property_name>                                                          
+      args = ()                                     
+      kwargs = {}                                   
+      method_object = <bound method CustomField.on_update of <CustomField: Issue-property_name>>                                                                                                                   
+      method = 'on_update'                          
+  File "apps/frappe/frappe/custom/doctype/custom_field/custom_field.py", line 208, in on_update                                                                                                                    
+    validate_fields_for_doctype(self.dt)                                                                 
+      self = <CustomField: Issue-property_name>                                                          
+      validate_fields_for_doctype = <function validate_fields_for_doctype at 0x7ffa2147f420>                                                                                                                       
+  File "apps/frappe/frappe/core/doctype/doctype/doctype.py", line 1201, in validate_fields_for_doctype                                                                                                             
+    validate_fields(meta)                           
+      doctype = 'Issue'                             
+      meta = <Meta: Issue>                          
+  File "apps/frappe/frappe/core/doctype/doctype/doctype.py", line 1649, in validate_fields                                                                                                                         
+    check_link_table_options(meta.get("name"), d)                                                        
+      meta = <Meta: Issue>                                                                                                                                                                             [68/1543]
+      check_illegal_characters = <function validate_fields.<locals>.check_illegal_characters at 0x7ffa2118a5c0>                                                                                                    
+      check_invalid_fieldnames = <function validate_fields.<locals>.check_invalid_fieldnames at 0x7ffa21189f80>                                                                                                    
+      check_unique_fieldname = <function validate_fields.<locals>.check_unique_fieldname at 0x7ffa2118bec0>                                                                                                        
+      check_fieldname_length = <function validate_fields.<locals>.check_fieldname_length at 0x7ffa2118a520>                                                                                                        
+      check_illegal_mandatory = <function validate_fields.<locals>.check_illegal_mandatory at 0x7ffa2118a0c0>                                                                                                      
+      check_link_table_options = <function validate_fields.<locals>.check_link_table_options at 0x7ffa2118a160>                                                                                                    
+      check_hidden_and_mandatory = <function validate_fields.<locals>.check_hidden_and_mandatory at 0x7ffa2118bb00>                                                                                                
+      check_width = <function validate_fields.<locals>.check_width at 0x7ffa2118b9c0>                                                                                                                              
+      check_in_list_view = <function validate_fields.<locals>.check_in_list_view at 0x7ffa2118a2a0>                                                                                                                
+      check_in_global_search = <function validate_fields.<locals>.check_in_global_search at 0x7ffa2118a480>                                                                                                        
+      check_dynamic_link_options = <function validate_fields.<locals>.check_dynamic_link_options at 0x7ffa2118be20>                                                                                                
+      check_illegal_default = <function validate_fields.<locals>.check_illegal_default at 0x7ffa214ca980>                                                                                                          
+      check_precision = <function validate_fields.<locals>.check_precision at 0x7ffa214cb1a0>                                                                                                                      
+      check_unique_and_text = <function validate_fields.<locals>.check_unique_and_text at 0x7ffa214cb060>                                                                                                          
+      check_fold = <function validate_fields.<locals>.check_fold at 0x7ffa214cad40>                                                                                                                                
+      check_search_fields = <function validate_fields.<locals>.check_search_fields at 0x7ffa214caf20>                                                                                                              
+      check_title_field = <function validate_fields.<locals>.check_title_field at 0x7ffa213fc720>                                                                                                                  
+      check_image_field = <function validate_fields.<locals>.check_image_field at 0x7ffa213fc680>                                                                                                                  
+      check_is_published_field = <function validate_fields.<locals>.check_is_published_field at 0x7ffa213fc5e0>                                                                                                    
+      check_website_search_field = <function validate_fields.<locals>.check_website_search_field at 0x7ffa213fc540>                                                                                                
+      check_timeline_field = <function validate_fields.<locals>.check_timeline_field at 0x7ffa213fc4a0>                                                                                                            
+      check_sort_field = <function validate_fields.<locals>.check_sort_field at 0x7ffa213fc400>                                                                                                                    
+      check_illegal_depends_on_conditions = <function validate_fields.<locals>.check_illegal_depends_on_conditions at 0x7ffa213fc360>                                                                              
+      check_table_multiselect_option = <function validate_fields.<locals>.check_table_multiselect_option at 0x7ffa213fc2c0>                                                                                        
+      scrub_options_in_select = <function validate_fields.<locals>.scrub_options_in_select at 0x7ffa213fc220>                                                                                                      
+      validate_fetch_from = <function validate_fields.<locals>.validate_fetch_from at 0x7ffa213fc180>                                                                                                              
+      validate_data_field_type = <function validate_fields.<locals>.validate_data_field_type at 0x7ffa213fc0e0>                                                                                                    
+      check_child_table_option = <function validate_fields.<locals>.check_child_table_option at 0x7ffa213fc040>                                                                                                    
+      check_max_height = <function validate_fields.<locals>.check_max_height at 0x7ffa213fc7c0>                                                                                                                    
+      check_no_of_ratings = <function validate_fields.<locals>.check_no_of_ratings at 0x7ffa213fc860>                                                                                                              
+      d = <LinkDocField: property_name parent=Issue>                                                     
+      fieldname_list = ['subject_section', 'naming_series', 'subject', 'column_break_4', 'property_name', 'customer', 'raised_by', 'cb00', 'status', 'priority', 'issue_type', 'issue_split_from', 'sb_details', 'd
+escription', 'service_level_section', 'service_level_agreement', 'response_by', 'reset_service_level_agreement', 'cb', 'agreement_status', 'resolution_by', 'service_level_agreement_creation', 'on_hold_since', 't
+otal_hold_time', 'response', 'first_response_time', 'first_responded_on', 'column_break_26', 'avg_response_time', 'section_break_19', 'resolution_details', 'column_break1', 'opening_date', 'opening_time', 'resol
+ution_date', 'resolution_time', 'user_resolution_time', 'additional_info', 'lead', 'contact', 'email_account', 'column_break_16', 'customer_name', 'project', 'company', 'via_customer_portal', 'attachment', 'cont
+ent_type']                                          
+      fields = [<Section BreakDocField: subject_section parent=Issue>, <SelectDocField: naming_series parent=Issue>, <DataDocField: subject parent=Issue>, <Column BreakDocField: column_break_4 parent=Issue>, <Li
+nkDocField: property_name parent=Issue>, <LinkDocField: customer parent=Issue>, <DataDocField: raised_by parent=Issue>, <Column BreakDocField: cb00 parent=Issue>, <SelectDocField: status parent=Issue>, <LinkDocF
+ield: priority parent=Issue>, <LinkDocField: issue_type parent=Issue>, <LinkDocField: issue_split_from parent=Issue>, <Section BreakDocField: sb_details parent=Issue>, <Text EditorDocField: description parent=Is
+sue>, <Section BreakDocField: service_level_section parent=Issue>, <LinkDocField: service_level_agreement parent=Issue>, <DatetimeDocField: response_by parent=Issue>, <ButtonDocField: reset_service_level_agreeme
+nt parent=Issue>, <Column BreakDocField: cb parent=Issue>, <SelectDocField: agreement_status parent=Issue>, <DatetimeDocField: resolution_by parent=Issue>, <DatetimeDocFie...
+      not_allowed_in_list_view = ['Section Break', 'Column Break', 'Tab Break', 'HTML', 'Table', 'Table MultiSelect', 'Button', 'Image', 'Fold', 'Heading', 'Attach Image']                                        
+  File "apps/frappe/frappe/core/doctype/doctype/doctype.py", line 1276, in check_link_table_options                                                                                                                
+    frappe.throw(                                   
+      docname = 'Issue'                             
+      d = <LinkDocField: property_name parent=Issue>                                                     
+      options = None                                
+  File "apps/frappe/frappe/__init__.py", line 658, in throw                                              
+    msgprint(                                       
+      msg = 'Issue: Options must be a valid DocType for field Property Name in row 5'                                                                                                                                
+      exc = <class 'frappe.core.doctype.doctype.doctype.WrongOptionsDoctypeLinkError'>                                                                                                                             
+      title = None                                  
+      is_minimizable = False                        
+      wide = False                                  
+      as_list = False                               
+      primary_action = None                         
+  File "apps/frappe/frappe/__init__.py", line 623, in msgprint                                           
+    _raise_exception()                              
+      msg = 'Issue: Options must be a valid DocType for field Property Name in row 5'                                                                                                                              
+      title = None                                  
+      raise_exception = <class 'frappe.core.doctype.doctype.doctype.WrongOptionsDoctypeLinkError'>                                                                                                                 
+      as_table = False                              
+      as_list = False                               
+      indicator = 'red'                             
+      alert = False                                 
+      primary_action = None                         
+      is_minimizable = False                        
+      wide = False                                  
+      realtime = False                              
+      sys = <module 'sys' (built-in)>               
+      _raise_exception = <function msgprint.<locals>._raise_exception at 0x7ffa213fc900>                                                                                                                           
+      inspect = <module 'inspect' from '/opt/.pyenv/versions/3.11.0/lib/python3.11/inspect.py'>                                                                                                                    
+      out = {'message': 'Issue: Options must be a valid DocType for field Property Name in row 5', 'title': 'Message', 'indicator': 'red', 'raise_exception': 1, '__frappe_exc_id': 'c9de43064615de76fb8299e5b6d226
+6dc1d990ae6c1bd01eccde3087'}                        
+  File "apps/frappe/frappe/__init__.py", line 574, in _raise_exception                                   
+    raise exc                                       
+      exc = WrongOptionsDoctypeLinkError('Issue: Options must be a valid DocType for field Property Name in row 5')                                                                                                
+      inspect = <module 'inspect' from '/opt/.pyenv/versions/3.11.0/lib/python3.11/inspect.py'>                                                                                                                    
+      msg = 'Issue: Options must be a valid DocType for field Property Name in row 5'                                                                                                                              
+      out = {'message': 'Issue: Options must be a valid DocType for field Property Name in row 5', 'title': 'Message', 'indicator': 'red', 'raise_exception': 1, '__frappe_exc_id': 'c9de43064615de76fb8299e5b6d226
+6dc1d990ae6c1bd01eccde3087'}                        
+      raise_exception = <class 'frappe.core.doctype.doctype.doctype.WrongOptionsDoctypeLinkError'>                                                                                                                 
+frappe.core.doctype.doctype.doctype.WrongOptionsDoctypeLinkError: Issue: Options must be a valid DocType for field Property Name in row 5                                                                          
+bench install-app propms  6.51s user 0.82s system 85% cpu 8.527 total                                                   
